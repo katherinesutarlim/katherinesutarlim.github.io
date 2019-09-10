@@ -11,11 +11,7 @@ body {
   background-image: url("../assets/diamond-upholstery.png");
 }
 
-.outer-container {
-
-}
-
-.inner-container {
+.container {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -67,11 +63,13 @@ ul {
   width: 540px;
   padding: 0;
   font-size: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 li {
   float: left;
-  margin: 0px 25px;
+  margin: 0px 10%;
   border: 2px solid #FAFF66;
   padding: 5px 8px;
 }
@@ -87,4 +85,112 @@ li:hover {
 
 li:hover a {
   color: black;
+}
+
+.email {
+  color: #FF534D;
+}
+
+@media (max-width: 830px) {
+  body {
+    width: 100%;
+  }
+
+  .container {
+    width: 500px;
+    height: 590px;
+    padding: 40px;
+  }
+
+  #main-title {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 35px 0 30px;
+    line-height: 70px;
+  }
+
+  hr {
+    width: 90%;
+  }
+
+  #description {
+    width: calc(100% - 80px);
+    margin: 0 40px;
+  }
+
+  .navigation {
+    width: 100%;
+    margin: 30px auto;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  li {
+    float: none;
+    margin: 0 15px 30px;
+    padding: 10px 0;
+  }
+
+}
+
+@media (max-width: 640px) {
+  body {
+    background: white
+  }
+
+  .container {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    box-shadow: 0 0 0;
+  }
+
+  #main-title {
+    width: calc(100% - 80px);
+    margin: 0px auto;
+    padding: 30px 40px;
+  }
+
+  #main-subtitle {
+    width: calc(100% - 80px);
+    text-align: center;
+    margin: 0px auto 27.5px;
+    padding: 20px 40px;
+    line-height: 45px;
+    background-color: #2983CC;
+    color: white;
+  }
+
+  hr {
+    width: 90%;
+    display: none;
+  }
+
+  #description {
+    width: calc(100% - 90px);
+    margin: 40px;
+  }
+
+  .navigation {
+    width: calc(100vw - 40px);
+    margin: 30px auto;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  li {
+    float: none;
+    margin: 0 15px 30px;
+    padding: 10px 0;
+  }
+
 }
