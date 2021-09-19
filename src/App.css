@@ -57,21 +57,30 @@ p {
 
 .summary a {
   color: black;
+  text-decoration-color: rgb(252, 196, 75, 0.75);
+}
+
+.summary a:hover {
   text-decoration-color: rgba(0, 163, 255, 0.5);
 }
 
 ul {
   list-style: none;
   padding: 0;
+  margin-top: 16px;
+  margin-left: -4px;
 }
 
 ul li {
   float: left;
   margin-bottom: 4px;
+  background-color: white;
+  padding: 2px 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
 }
 
 ul li:not(:last-child) {
-  margin-right: 16px;
+  margin-right: 12px;
 }
 
 .embellishment {
