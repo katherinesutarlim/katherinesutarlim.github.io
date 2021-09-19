@@ -1,0 +1,16 @@
+.link {
+    text-decoration: none;
+    color: #000;
+}
+
+.link:hover .icon {
+    border-bottom: 1px solid rgba(255, 77, 0, 0.5);
+}
+
+.link:hover .link-text {
+    border-bottom: 1px solid rgba(0, 163, 255, 0.5);
+}
+
+.icon {
+    padding-right: 8px;
+}
