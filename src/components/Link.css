@@ -6,6 +6,7 @@
 .link:hover {
     border-bottom: 3px solid #FCE183;
     color: #5E43CA;
+    cursor: pointer;
 }
 
 .icon {
