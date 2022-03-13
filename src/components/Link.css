@@ -3,12 +3,9 @@
     color: #000;
 }
 
-.link:hover .icon {
-    border-bottom: 1px solid rgba(255, 77, 0, 0.5);
-}
-
-.link:hover .link-text {
-    border-bottom: 1px solid rgba(0, 163, 255, 0.5);
+.link:hover {
+    border-bottom: 3px solid #FCE183;
+    color: #5E43CA;
 }
 
 .icon {

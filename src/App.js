@@ -1,26 +1,36 @@
-import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
-import logo from './assets/logo.svg';
+import { faFileAlt, faEnvelope, faHome } from '@fortawesome/free-solid-svg-icons'
 import embellishment from './assets/embellishment.svg';
 import './App.css';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link } from './components/Link';
 
 function App() {
+  const year = new Date().getFullYear();
   return (
     <div className="App">
-      <header className="header">
-        <img src={logo} className="logo" alt="Katherine Sutarlim, logo" />
-      </header>
       <main>
         <div className="container">
-          <div className="content">
-            <div className="greeting">
-              <span className="hello">Hello I'm </span>
-              <span className="name">Katherine!</span>
+          <div className="top-container">
+            <div className="content">
+              <div className="greeting">
+                <span className="hello">Hello I'm </span>
+                <span className="name">Katherine!</span>
+              </div>
+              {window.location.pathname === "/contact" ? (
+                <div>
+                  <p className="bold">Nice to meet you!</p>
+                  <p className="summary">Got a question to ask or a something to share? Send me an email at <a href='mailto:katherinesutarlim@ymail.com'>katherinesutarlim@ymail.com</a> and I will get back to you ASAP. Looking forward to our chat!</p>
+                </div>
+              ) : (
+                <div>
+                  <p className="bold">I love <span className='highlight'>coding</span> and <span className='highlight'>creating</span>.</p>
+                  <p className="summary">I’m a full-stack developer specialising in Mobile App Development with <span className='highlight'>React Native</span> and <span className='highlight'>AWS</span>. I love tinkering with tech and crafts alike. Hit me up if you want to chat!</p>
+                </div>
+              )}
             </div>
-            <p className="bold">I love creating and coding.</p>
-            <p className="summary">I develop web and mobile applications with JavaScript (React, React Native, Node.js, Vue.js), and I enjoy facing new challenges, learning new technologies, languages, and frameworks.</p>
-            <p className="summary">Have a creative project you want to make real? Feel free to get in touch via <a href="https://linkedin.com/in/katherine-sutarlim/">LinkedIn</a> or email at <a href="mailto:katherinesutarlim@ymail.com">katherinesutarlim@ymail.com</a></p>
+            <img src={embellishment} className="embellishment large-screen" alt="Laptop, git branches, and code" />
+          </div>
+          <div className="bottom-container">
             <ul>
               {[
                 {
@@ -37,15 +47,30 @@ function App() {
                   icon: faLinkedin,
                   text: "LinkedIn",
                   url: "https://linkedin.com/in/katherine-sutarlim/"
+                },
+                {
+                  icon: faEnvelope,
+                  text: "Contact me",
+                  url: "/contact",
+                  target: "_self"
+                },
+                {
+                  icon: faHome,
+                  text: "Home",
+                  url: "/",
+                  target: "_self"
                 }
-              ].map(({icon, text, url}) => (
-                <li key={text}><Link icon={icon} text={text} url={url} /></li>
+              ].filter(link => window.location.pathname !== link.url).map(({icon, text, url, target}) => (
+                <li key={text}><Link icon={icon} text={text} url={url} target={target}/></li>
               ))}
             </ul>
+            <img src={embellishment} className="embellishment medium-screen" alt="Laptop, git branches, and code" />
           </div>
-          <img src={embellishment} className="embellishment" alt="Laptop, git branches, and code" />
         </div>
       </main>
+      <footer>
+        Copyright &copy; {year}, Katherine Sutarlim
+      </footer>
     </div>
   );
 }
