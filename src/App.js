@@ -55,7 +55,6 @@ function App() {
                   text: "Contact me",
                   page: "contact",
                   onClick: (event) => {
-                    console.log("TEST");
                     event.preventDefault();
                     setPage("contact");
                   }
@@ -65,7 +64,6 @@ function App() {
                   text: "Home",
                   page: "home",
                   onClick: (event) => {
-                    console.log("TEST");
                     event.preventDefault();
                     setPage("home");
                   }
